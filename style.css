@@ -45,9 +45,10 @@ dialog[open] {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 12px -1px;
     border-radius: 5px;
     min-height: 70svh;
-    display: grid;
-    grid-template-rows: 2em 1fr 3.5em;
-    width: 50svw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30svw;
     padding: 1em;
     z-index: 50;
 }
@@ -73,11 +74,12 @@ dialog[open] {
     align-items: center;
     font-size: 36px;
     font-weight: 1000;
+    flex: 1;
 }
 
 #close-modal {
     text-align: right;
-    width: 100%;
+    width: 95%;
 }
 
 #close-modal:hover {
@@ -252,7 +254,8 @@ dialog::backdrop {
     }
 
     dialog[open] {
-        width: fit-content !important;
+        width: 95svw !important;
+        padding: 1em;
     }
 
 }
