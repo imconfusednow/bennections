@@ -239,7 +239,7 @@ dialog::backdrop {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .tile {
         aspect-ratio: 1/1;
         padding: 0;
@@ -249,6 +249,10 @@ dialog::backdrop {
     .category {
         font-size: 0.8em;
         aspect-ratio: 5/1;
+    }
+
+    dialog[open] {
+        width: fit-content !important;
     }
 
 }
