@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>Totes Original Games</header>
+        <hr>
+        <div id="title-n-date">
+            <span>Bennections</span><span>May 27, 2024</span>
+        </div>
+        <hr>
+        <h4>Create four groups of four!</h4>
+        <div id="tile-wrapper">
+
+        </div>
+        <div id="outer-lives-div">
+            <span>Mistakes remaining:</span><div id="lives-div"></div>
+        </div>
+        <div id="buttons-div">
+            <button id="shuffle-button" class="btn">Shuffle</button>
+            <button id="deselect-button" class="btn" disabled>Deselect all</button>
+            <button id="submit-button" class="btn" disabled>Submit</button>
+        </div>
+        <div id="show-results-div" hidden>
+            <button id="view-results" class="btn">View Results</button>
+        </div>
+
+        <dialog id="finish-dialog">
+            <div id="close-modal">Back to Puzzle X</div>
+            <div id="results-div">
+                <div id="feedback">Solid!</div>
+                <div id="guess-history"></div>  
+            </div>
+            <button id="share-button" class="btn">Share Your results</button>
+        </dialog>
+
+        <div id="toast" class="hidden">
+            
+        </div>
+
+        <script src="script.js" async defer></script>
+    </body>
+</html>

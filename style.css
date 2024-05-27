@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --unselected-colour: rgb(239, 239, 230);
+    --selected-colour: rgb(90, 89, 78);
+
+}
+
+body {
+    background-color: white;
+    font-family: nyt-franklin, Arial;    
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+header {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 400;
+    padding: 0.2em;
+    font-family: fantasy;
+}
+
+h4 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: auto;
+    width: 100%;
+    display: block;
+    padding: 1em;
+    font-weight: 100;
+}
+
+hr {
+    opacity: 0.5;
+}
+
+dialog[open] {
+    max-width: 700px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 12px -1px;
+    border-radius: 5px;
+    min-height: 70svh;
+    display: grid;
+    grid-template-rows: 2em 1fr 3.5em;
+    width: 50svw;
+    padding: 1em;
+    z-index: 50;
+}
+
+#toast {
+    position: absolute;
+    top: 7em;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: black;
+    color: white;
+    padding: 0.5em 1.2em;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: opacity 0.5s;
+    z-index: 100;
+}
+
+#results-div {
+    padding: 1em 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 36px;
+    font-weight: 1000;
+}
+
+#close-modal {
+    text-align: right;
+    width: 100%;
+}
+
+#close-modal:hover {
+    cursor: pointer;
+    text-decoration: underline;    
+}
+
+dialog::backdrop {
+    background-color: #fafafa;
+    opacity: 0.7;
+
+}
+
+#tile-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.4em;
+    max-width: 700px;
+    margin: auto;
+}
+
+#buttons-div, #show-results-div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 0.5em;
+}
+
+#outer-lives-div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1em;
+}
+
+#lives-div {
+    display: flex;
+    gap: 10px;
+    margin-inline: 0.5em;
+}
+
+#share-button {
+    background-color: black;
+    color: white;
+    margin: auto;
+}
+
+#guess-history {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 0.3em;
+}
+
+#title-n-date {
+    font-size: 1em;
+    padding: 1.5em 1em;
+}
+
+#title-n-date span {
+    font-size: 2em;
+    vertical-align: baseline;
+}
+
+#title-n-date span:first-child {
+    font-weight: 1000;
+    margin-right: 0.3em;
+}
+
+#title-n-date span:last-child {
+    font-size: 1.5em;
+}
+
+.life {
+    background-color: var(--selected-colour);
+    width: 1em;
+    height: 1em;
+    border-radius: 100em;
+}
+
+.tile {
+    background-color: var(--unselected-colour);
+    padding: 1em;
+    border-radius: 5px;
+    aspect-ratio: 2/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    user-select: none;    
+}
+
+.shake {
+    animation: shake 0.3s 1;
+}
+
+.tile:hover {
+    cursor: pointer;
+}
+
+.tile.selected {
+    background-color: var(--selected-colour);
+    color: white;
+}
+
+.category {
+    grid-column: 1/5;
+    padding: 1em;
+    border-radius: 5px;
+    aspect-ratio: 12/1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    user-select: none;
+    gap: 0.2em;
+}
+
+.category span:nth-child(even) {
+    font-weight: 100;
+}
+
+.btn {
+    background-color: transparent;
+    border: solid gray 1px;
+    font-weight: 600;
+    padding: 1em;
+    border-radius: 32px;
+    font-size: 16px;
+}
+
+.result-square {
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 5px;
+}
+
+*[hidden] {
+    display: none !important;
+}
+
+.hidden{
+    opacity: 0;
+}
+
+@keyframes shake {
+    0%,
+  100% {
+    transform: translatex(0);
+  }
+    25% {
+      transform: translate(-5px);  
+    }
+    75% {
+        transform: translate(5px);  
+    }
+}
+
+@media (max-width: 500px) {
+    .tile {
+        aspect-ratio: 1/1;
+        padding: 0;
+        font-size: 0.8em;
+    }
+
+    .category {
+        font-size: 0.8em;
+        aspect-ratio: 5/1;
+    }
+
+}
